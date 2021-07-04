@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'past_dueregular';
+  src: url('/fonts/pastduedemo.woff2') format('woff2'),
+  url('/fonts/pastduedemo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'indigo_regularregular';
+  src: url('/fonts/indigo_regular.woff2') format('woff2'),
+  url('/fonts/indigo_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.fat-font {
+  font-family: fatfrank, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.skippy-font {
+  font-family: skippy-sharp, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tilty {
+  transform: rotate(-20deg);
+}
+
+.verygood-font {
+  font-family: fatfrank, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.paid-banner {
+  font-family: 'past_dueregular';
+  color: #a92a25;
+  transform: rotate(-10deg);
+}
+
+@tailwind utilities;
