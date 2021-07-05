@@ -50991,11 +50991,14 @@ var render = function() {
                     "p",
                     {
                       staticClass:
-                        "my-2 p-4 rounded bg-yellow-100 text-yellow-500 border-2 border-yellow-500"
+                        "my-2 p-4 rounded bg-blue-100 text-blue-500 border-2 border-blue-500"
                     },
                     [
+                      _c("span", { staticClass: "bold" }, [
+                        _vm._v("Heads up!")
+                      ]),
                       _vm._v(
-                        "This is only a physical good. This will not grant you entrance to the race."
+                        " This will not grant you entrance to the race, this will only get you the Chocolate Milk Mile t-shirt."
                       )
                     ]
                   )

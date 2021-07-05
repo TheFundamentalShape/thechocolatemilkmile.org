@@ -87,7 +87,7 @@
                         <h1 class="verygood-font text-2xl">Your Registration</h1>
 
                         <p class="my-2 p-4 rounded bg-green-100 text-green-500 border-2 border-green-500" v-if="order.hasShirt">Awesome! You're also getting a t-shirt with your registration! That's adds <b>$13.00</b> to your order's total. We appreciate it!</p>
-                        <p class="my-2 p-4 rounded bg-yellow-100 text-yellow-500 border-2 border-yellow-500" v-if="event.grants_entrance === 0">This is only a physical good. This will not grant you entrance to the race.</p>
+                        <p class="my-2 p-4 rounded bg-blue-100 text-blue-500 border-2 border-blue-500" v-if="event.grants_entrance === 0"><span class="bold">Heads up!</span> This will not grant you entrance to the race, this will only get you the Chocolate Milk Mile t-shirt.</p>
 
                         <p>Your order total is <b>${{ this.totalCost / 100 }}.00</b></p>
 
