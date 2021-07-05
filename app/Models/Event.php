@@ -9,7 +9,7 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'fee', 'location', 'date'];
+    protected $fillable = ['title', 'fee', 'location', 'date', 'has_addon'];
     protected $dates = ['date'];
 
     public function registrations(){
@@ -42,6 +42,7 @@ class Event extends Model
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'has_addon' => $this->has_addon,
             'fee' => $this->fee,
             'formatted_price' => $this->formatted_price,
             'location' => $this->location,

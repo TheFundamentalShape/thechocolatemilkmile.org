@@ -24,6 +24,7 @@ class EventController extends Controller
             'title' => 'required|string',
             'fee' => 'required|integer',
             'location' => 'required|string',
+            'has_addon' => 'required|bool',
             'date' => 'required'
         ]);
 
@@ -31,7 +32,8 @@ class EventController extends Controller
             'title' => $request->title,
             'fee' => $request->fee,
             'location' => $request->location,
-            'date' => Carbon::parse($request->date)
+            'date' => Carbon::parse($request->date),
+            'has_addon' => $request->has_addon
         ]);
 
         return redirect('/manager');

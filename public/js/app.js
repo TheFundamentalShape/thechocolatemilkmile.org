@@ -7728,6 +7728,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var elements = stripe.elements(),
     card = undefined;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -50803,140 +50805,156 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "my-4 text-gray-600" }, [
-            _c("p", { staticClass: "my-2 text-lg" }, [
-              _vm._v("Would you like to add on a t-shirt to your registration?")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex" }, [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "bg-blue-500 outline-none focus:shadow-outline hover:bg-blue-700 rounded my-auto px-4 py-2 text-white shadow",
-                  attrs: { type: "button" },
-                  on: { click: _vm.addShirtToOrder }
-                },
-                [_vm._v("Yes, please!")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm.order.hasShirt
-            ? _c("div", { staticClass: "my-4 bg-white rounded shadow p-4" }, [
-                _c("p", { staticClass: "text-gray-600" }, [
-                  _vm._v("What size are you?")
-                ]),
+          _vm.event.has_addon === 1
+            ? _c("div", [
+                _vm._m(1),
                 _vm._v(" "),
-                _c("div", { staticClass: "inline-block relative w-64" }, [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.order.shirtSize,
-                          expression: "order.shirtSize"
-                        }
-                      ],
-                      staticClass:
-                        "my-4 block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
-                      attrs: { name: "shirtSize" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            _vm.order,
-                            "shirtSize",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    [
-                      _c("option", [_vm._v("Please select a size!")]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "xs" } }, [
-                        _vm._v("Extra Small")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "s" } }, [
-                        _vm._v("Small")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "xm" } }, [
-                        _vm._v("Extra Medium")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "m" } }, [
-                        _vm._v("Medium")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "lg" } }, [
-                        _vm._v("Large")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "xl" } }, [
-                        _vm._v("Extra Large")
-                      ])
-                    ]
-                  ),
+                _c("div", { staticClass: "my-4 text-gray-600" }, [
+                  _c("p", { staticClass: "my-2 text-lg" }, [
+                    _vm._v(
+                      "Would you like to add on a t-shirt to your registration?"
+                    )
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "fill-current h-4 w-4",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 20 20"
-                          }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                            }
-                          })
-                        ]
-                      )
-                    ]
-                  )
+                  _c("div", { staticClass: "flex" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "bg-blue-500 outline-none focus:shadow-outline hover:bg-blue-700 rounded my-auto px-4 py-2 text-white shadow",
+                        attrs: { type: "button" },
+                        on: { click: _vm.addShirtToOrder }
+                      },
+                      [_vm._v("Yes, please!")]
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "flex" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "text-gray-500 my-auto hover:underline",
-                      on: { click: _vm.removeShirtFromOrder }
-                    },
-                    [
-                      _vm._v(
-                        "Actually, nevermind. I don't want a sweet t-shirt."
-                      )
-                    ]
-                  )
-                ])
+                _vm.order.hasShirt
+                  ? _c(
+                      "div",
+                      { staticClass: "my-4 bg-white rounded shadow p-4" },
+                      [
+                        _c("p", { staticClass: "text-gray-600" }, [
+                          _vm._v("What size are you?")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "inline-block relative w-64" },
+                          [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.order.shirtSize,
+                                    expression: "order.shirtSize"
+                                  }
+                                ],
+                                staticClass:
+                                  "my-4 block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline",
+                                attrs: { name: "shirtSize" },
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.order,
+                                      "shirtSize",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", [_vm._v("Please select a size!")]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "xs" } }, [
+                                  _vm._v("Extra Small")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "s" } }, [
+                                  _vm._v("Small")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "xm" } }, [
+                                  _vm._v("Extra Medium")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "m" } }, [
+                                  _vm._v("Medium")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "lg" } }, [
+                                  _vm._v("Large")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "xl" } }, [
+                                  _vm._v("Extra Large")
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "fill-current h-4 w-4",
+                                    attrs: {
+                                      xmlns: "http://www.w3.org/2000/svg",
+                                      viewBox: "0 0 20 20"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d:
+                                          "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "flex" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "text-gray-500 my-auto hover:underline",
+                              on: { click: _vm.removeShirtFromOrder }
+                            },
+                            [
+                              _vm._v(
+                                "Actually, nevermind. I don't want a sweet t-shirt."
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  : _vm._e()
               ])
             : _vm._e(),
           _vm._v(" "),

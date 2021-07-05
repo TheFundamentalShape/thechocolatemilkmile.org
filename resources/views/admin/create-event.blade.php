@@ -43,6 +43,14 @@
             </div>
 
             <div>
+                <label>Has Addon?</label>
+                <select name="has_addon" class="border rounded px-2 py-2 my-2 block w-full">
+                    <option value="1">Yes, this event has addons</option>
+                    <option value="0">None</option>
+                </select>
+            </div>
+
+            <div>
                 <label>Event Date: </label>
                 <div class="my-2">
                     <input class="w-full rounded border px-2 py-2" name="date" type="datetime-local">
