@@ -3,6 +3,9 @@
 
         <div class="mt-10 bg-white rounded shadow p-8">
             <h1 class="verygood-font text-2xl md:text-4xl">{{ event.title }}</h1>
+            <div v-if="event.grants_entrance === 0" class="bg-yellow-500 p-6">
+                <h1>This is only a physical good. This will not grant you entrance to the race.</h1>
+            </div>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-calendar-day"></i> {{ event.dates.human }}</p>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-map-marked-alt"></i> {{ event.location }}</p>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-money-bill-wave"></i> ${{ event.formatted_price }}</p>
@@ -27,7 +30,7 @@
                     <input autocomplete="off" v-model="order.name" placeholder="John Doe" name="name" class="bg-white outline-none focus:shadow-outline rounded py-3 px-4 w-full mt-2 shadow">
                 </div>
 
-                <div class="my-4">
+                <div v-if="event.grants_entrance === 1" class="my-4">
                     <label class="text-lg text-gray-600">
                         What's your mile time?
                     </label>

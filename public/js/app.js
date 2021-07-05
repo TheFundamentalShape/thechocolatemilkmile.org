@@ -7730,6 +7730,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var elements = stripe.elements(),
     card = undefined;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -50639,6 +50642,16 @@ var render = function() {
         _vm._v(_vm._s(_vm.event.title))
       ]),
       _vm._v(" "),
+      _vm.event.grants_entrance === 0
+        ? _c("div", { staticClass: "bg-yellow-500 p-6" }, [
+            _c("h1", [
+              _vm._v(
+                "This is only a physical good. This will not grant you entrance to the race."
+              )
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _c("p", { staticClass: "text-gray-600 text-lg my-2" }, [
         _c("i", { staticClass: "fas fa-calendar-day" }),
         _vm._v(" " + _vm._s(_vm.event.dates.human))
@@ -50736,40 +50749,42 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "my-4" }, [
-            _c("label", { staticClass: "text-lg text-gray-600" }, [
-              _vm._v(
-                "\n                    What's your mile time?\n                "
-              )
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.order.mile_time,
-                  expression: "order.mile_time"
-                }
-              ],
-              staticClass:
-                "outline-none focus:shadow-outline bg-white rounded py-3 px-4 w-full mt-2 shadow relative",
-              attrs: {
-                autocomplete: "off",
-                placeholder: "8 minutes",
-                name: "mile_time"
-              },
-              domProps: { value: _vm.order.mile_time },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+          _vm.event.grants_entrance === 1
+            ? _c("div", { staticClass: "my-4" }, [
+                _c("label", { staticClass: "text-lg text-gray-600" }, [
+                  _vm._v(
+                    "\n                    What's your mile time?\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.order.mile_time,
+                      expression: "order.mile_time"
+                    }
+                  ],
+                  staticClass:
+                    "outline-none focus:shadow-outline bg-white rounded py-3 px-4 w-full mt-2 shadow relative",
+                  attrs: {
+                    autocomplete: "off",
+                    placeholder: "8 minutes",
+                    name: "mile_time"
+                  },
+                  domProps: { value: _vm.order.mile_time },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.order, "mile_time", $event.target.value)
+                    }
                   }
-                  _vm.$set(_vm.order, "mile_time", $event.target.value)
-                }
-              }
-            })
-          ]),
+                })
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "my-4" }, [
             _c("label", { staticClass: "text-lg text-gray-600" }, [

@@ -43,6 +43,14 @@
             </div>
 
             <div>
+                <label>Grants entrance?</label>
+                <select name="grants_entrance" class="border rounded px-2 py-2 my-2 block w-full">
+                    <option value="1">Yes-- If selected this grants the registrant entrance to the race.</option>
+                    <option value="0">No-- This doesn't grant entrance to the race. Used to allow registrants to purchase physical goods.</option>
+                </select>
+            </div>
+
+            <div>
                 <label>Has Addon?</label>
                 <select name="has_addon" class="border rounded px-2 py-2 my-2 block w-full">
                     <option value="1">Yes, this event has addons</option>
