@@ -3,9 +3,6 @@
 
         <div class="mt-10 bg-white rounded shadow p-8">
             <h1 class="verygood-font text-2xl md:text-4xl">{{ event.title }}</h1>
-            <div v-if="event.grants_entrance === 0" class="bg-yellow-500 p-6">
-                <h1>This is only a physical good. This will not grant you entrance to the race.</h1>
-            </div>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-calendar-day"></i> {{ event.dates.human }}</p>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-map-marked-alt"></i> {{ event.location }}</p>
             <p class="text-gray-600 text-lg my-2"><i class="fas fa-money-bill-wave"></i> ${{ event.formatted_price }}</p>
@@ -90,6 +87,7 @@
                         <h1 class="verygood-font text-2xl">Your Registration</h1>
 
                         <p class="my-2 p-4 rounded bg-green-100 text-green-500 border-2 border-green-500" v-if="order.hasShirt">Awesome! You're also getting a t-shirt with your registration! That's adds <b>$13.00</b> to your order's total. We appreciate it!</p>
+                        <p class="my-2 p-4 rounded bg-yellow-100 text-yellow-500 border-2 border-yellow-500" v-if="event.grants_entrance === 0">This is only a physical good. This will not grant you entrance to the race.</p>
 
                         <p>Your order total is <b>${{ this.totalCost / 100 }}.00</b></p>
 

@@ -7731,8 +7731,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 var elements = stripe.elements(),
     card = undefined;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -50642,16 +50640,6 @@ var render = function() {
         _vm._v(_vm._s(_vm.event.title))
       ]),
       _vm._v(" "),
-      _vm.event.grants_entrance === 0
-        ? _c("div", { staticClass: "bg-yellow-500 p-6" }, [
-            _c("h1", [
-              _vm._v(
-                "This is only a physical good. This will not grant you entrance to the race."
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
       _c("p", { staticClass: "text-gray-600 text-lg my-2" }, [
         _c("i", { staticClass: "fas fa-calendar-day" }),
         _vm._v(" " + _vm._s(_vm.event.dates.human))
@@ -50994,6 +50982,21 @@ var render = function() {
                       ),
                       _c("b", [_vm._v("$13.00")]),
                       _vm._v(" to your order's total. We appreciate it!")
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.event.grants_entrance === 0
+                ? _c(
+                    "p",
+                    {
+                      staticClass:
+                        "my-2 p-4 rounded bg-yellow-100 text-yellow-500 border-2 border-yellow-500"
+                    },
+                    [
+                      _vm._v(
+                        "This is only a physical good. This will not grant you entrance to the race."
+                      )
                     ]
                   )
                 : _vm._e(),
