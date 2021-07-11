@@ -50980,7 +50980,7 @@ var render = function() {
                       _vm._v(
                         "Awesome! You're also getting a t-shirt with your registration! That's adds "
                       ),
-                      _c("b", [_vm._v("$13.00")]),
+                      _c("b", [_vm._v("$18.00")]),
                       _vm._v(" to your order's total. We appreciate it!")
                     ]
                   )
