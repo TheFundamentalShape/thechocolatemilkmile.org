@@ -7569,6 +7569,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "RegistrantsList",
   methods: {
@@ -50582,6 +50584,23 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c("td", { staticClass: "border text-center px-4 py-2" }, [
+              _c(
+                "span",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: registration.hasOwnProperty("shirt_order"),
+                      expression: "registration.hasOwnProperty('shirt_order')"
+                    }
+                  ]
+                },
+                [_vm._v(_vm._s(registration.shirt_order.size))]
+              )
+            ]),
+            _vm._v(" "),
             _c("td", { staticClass: "border px-4 py-2" }, [
               _vm._v(_vm._s(registration.created_at))
             ])
@@ -50606,6 +50625,8 @@ var staticRenderFns = [
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Checked in?")]),
         _vm._v(" "),
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("T-shirt?")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Shirt Size")]),
         _vm._v(" "),
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Register date")])
       ])
