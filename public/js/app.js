@@ -7569,7 +7569,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "RegistrantsList",
   methods: {
@@ -50607,8 +50606,6 @@ var staticRenderFns = [
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Checked in?")]),
         _vm._v(" "),
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("T-shirt?")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Shirt Size")]),
         _vm._v(" "),
         _c("th", { staticClass: "border px-4 py-2" }, [_vm._v("Register date")])
       ])

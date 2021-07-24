@@ -9,7 +9,6 @@
                 <th class="border px-4 py-2">Mile time</th>
                 <th class="border px-4 py-2">Checked in?</th>
                 <th class="border px-4 py-2">T-shirt?</th>
-                <th class="border px-4 py-2">Shirt Size</th>
                 <th class="border px-4 py-2">Register date</th>
             </tr>
             </thead>
