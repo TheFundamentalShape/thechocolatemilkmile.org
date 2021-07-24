@@ -50546,40 +50546,30 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("td", { staticClass: "border text-center px-4 py-2" }, [
-              _c(
-                "span",
-                {
-                  directives: [
+              registration.hasOwnProperty("shirt_order") === false
+                ? _c(
+                    "span",
                     {
-                      name: "show",
-                      rawName: "v-show",
-                      value:
-                        registration.hasOwnProperty("shirt_order") === false,
-                      expression:
-                        "registration.hasOwnProperty('shirt_order') === false"
-                    }
-                  ],
-                  staticClass:
-                    "bg-yellow-500 text-lg py-1 w-full text-white rounded px-4"
-                },
-                [_vm._v("No")]
-              ),
-              _c(
-                "span",
-                {
-                  directives: [
+                      staticClass:
+                        "bg-yellow-500 text-lg py-1 w-full text-white rounded px-4"
+                    },
+                    [_vm._v("No")]
+                  )
+                : _vm._e(),
+              registration.hasOwnProperty("shirt_order")
+                ? _c(
+                    "span",
                     {
-                      name: "show",
-                      rawName: "v-show",
-                      value: registration.hasOwnProperty("shirt_order"),
-                      expression: "registration.hasOwnProperty('shirt_order')"
-                    }
-                  ],
-                  staticClass:
-                    "bg-green-500 text-lg py-1 w-full text-white rounded px-4"
-                },
-                [_vm._v("Yes (" + _vm._s(registration.shirt_order.size) + ")")]
-              )
+                      staticClass:
+                        "bg-green-500 text-lg py-1 w-full text-white rounded px-4"
+                    },
+                    [
+                      _vm._v(
+                        "Yes (" + _vm._s(registration.shirt_order.size) + ")"
+                      )
+                    ]
+                  )
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("td", { staticClass: "border px-4 py-2" }, [
