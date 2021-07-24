@@ -7570,7 +7570,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "RegistrantsList",
   methods: {
@@ -50580,24 +50579,7 @@ var render = function() {
                   staticClass:
                     "bg-green-500 text-lg py-1 w-full text-white rounded px-4"
                 },
-                [_vm._v("Yes")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("td", { staticClass: "border text-center px-4 py-2" }, [
-              _c(
-                "span",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: registration.hasOwnProperty("shirt_order"),
-                      expression: "registration.hasOwnProperty('shirt_order')"
-                    }
-                  ]
-                },
-                [_vm._v(_vm._s(registration.shirt_order.size))]
+                [_vm._v("Yes (" + _vm._s(registration.shirt_order.size) + ")")]
               )
             ]),
             _vm._v(" "),
