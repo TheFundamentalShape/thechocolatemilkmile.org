@@ -47,7 +47,7 @@
                     return "Large";
                 }
 
-                return "Contact Registrant";
+                return size;
             }
         },
         data() {
