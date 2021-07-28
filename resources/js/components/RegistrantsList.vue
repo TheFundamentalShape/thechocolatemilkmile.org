@@ -41,7 +41,7 @@
             getSizeLabel(size){
                 if(size == 's') {
                     return "Small";
-                } else if (size == 'md' || size == 'xm'){
+                } else if (size == 'm' || size == 'xm'){
                     return "Medium"
                 } else if (size == 'lg'){
                     return "Large";
