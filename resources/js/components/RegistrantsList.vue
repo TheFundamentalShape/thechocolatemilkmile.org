@@ -19,7 +19,7 @@
                 <td class="border text-center px-4 py-2"><span v-show="registration.checked_in_at === null" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span><span v-show="registration.checked_in_at !== null" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes</span></td>
                 <td class="border text-center px-4 py-2">
                     <span v-if="registration.hasOwnProperty('shirt_order') === false" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span>
-                    <span v-else-if="registration.hasOwnProperty('shirt_order') === true" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes ({{ getSizeLabel(registration.shirt_order.size) }})</span></td>
+                    <span v-else-if="registration.hasOwnProperty('shirt_order') === true" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">{{ getSizeLabel(registration.shirt_order.size) }}</span></td>
                 <td class="border px-4 py-2">{{ registration.created_at }}</td>
             </tr>
             </tbody>
