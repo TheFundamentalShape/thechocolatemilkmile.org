@@ -17,7 +17,9 @@
                 <td class="border px-4 py-2">{{ registration.registrant.name }}</td>
                 <td class="border px-4 py-2">{{ registration.registrant.mile_time }}</td>
                 <td class="border text-center px-4 py-2"><span v-show="registration.checked_in_at === null" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span><span v-show="registration.checked_in_at !== null" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes</span></td>
-                <td class="border text-center px-4 py-2"><span v-show="registration.hasOwnProperty('shirt_order') === false" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span><span v-show="registration.hasOwnProperty('shirt_order')" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes</span></td>
+                <td class="border text-center px-4 py-2">
+                    <span v-if="registration.hasOwnProperty('shirt_order') === false" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span>
+                    <span v-else-if="registration.hasOwnProperty('shirt_order') === true" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes ({{ getSizeLabel(registration.shirt_order.size) }})</span></td>
                 <td class="border px-4 py-2">{{ registration.created_at }}</td>
             </tr>
             </tbody>
@@ -35,6 +37,17 @@
                     .then(response => {
                         this.registrations = response.data;
                     });
+            },
+            getSizeLabel(size){
+                if(size == 's') {
+                    return "Small";
+                } else if (size == 'md' || size == 'xm'){
+                    return "Medium"
+                } else if (size == 'lg'){
+                    return "Large";
+                }
+
+                return "Contact Registrant";
             }
         },
         data() {
