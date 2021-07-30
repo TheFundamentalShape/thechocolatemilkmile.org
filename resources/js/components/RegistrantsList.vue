@@ -2,28 +2,74 @@
     <div>
         <h2 class="verygood-font text-2xl">{{ event.title }} Registrants</h2>
 
-        <table class="w-full table-auto mt-8">
-            <thead>
-            <tr>
-                <th class="border px-4 py-2">Registrant</th>
-                <th class="border px-4 py-2">Mile time</th>
-                <th class="border px-4 py-2">Checked in?</th>
-                <th class="border px-4 py-2">T-shirt?</th>
-                <th class="border px-4 py-2">Register date</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="registration in registrations">
-                <td class="border px-4 py-2">{{ registration.registrant.name }}</td>
-                <td class="border px-4 py-2">{{ registration.registrant.mile_time }}</td>
-                <td class="border text-center px-4 py-2"><span v-show="registration.checked_in_at === null" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span><span v-show="registration.checked_in_at !== null" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">Yes</span></td>
-                <td class="border text-center px-4 py-2">
-                    <span v-if="registration.hasOwnProperty('shirt_order') === false" class="bg-yellow-500 text-lg py-1 w-full text-white rounded px-4">No</span>
-                    <span v-else-if="registration.hasOwnProperty('shirt_order') === true" class="bg-green-500 text-lg py-1 w-full text-white rounded px-4">{{ getSizeLabel(registration.shirt_order.size) }}</span></td>
-                <td class="border px-4 py-2">{{ registration.created_at }}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="flex flex-col">
+        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Name
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Miletime
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Status
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        T-Shirt Order?
+                    </th>
+                    <th scope="col" class="relative px-6 py-3">
+                        <span class="sr-only">Details</span>
+                    </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr v-for="registration in registrations">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex">
+                        <div>
+                            <div class="text-sm font-medium text-gray-900">
+                            {{ registration.registrant.name }}
+                            </div>
+                            <div class="text-sm text-gray-500">
+                            {{ registration.registrant.email }}
+                            </div>
+                        </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900">{{ registration.registrant.mile_time }}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span v-show="registration.checked_in_at === null" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                            Not checked in
+                        </span>
+                        <span v-show="registration.checked_in_at !== null" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            Checked in!
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span v-if="registration.hasOwnProperty('shirt_order') === false" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                            No shirt order
+                        </span>
+                        <span v-else-if="registration.hasOwnProperty('shirt_order') === true" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            {{ getSizeLabel(registration.shirt_order.size) }} shirt
+                        </span>
+                    </td>
+                    <td class="hidden px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Details</a>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+
     </div>
 </template>
 
