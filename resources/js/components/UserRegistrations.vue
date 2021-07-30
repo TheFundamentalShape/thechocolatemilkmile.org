@@ -70,8 +70,11 @@
             listen() {
                 window.Echo.channel('registrations')
                     .listen('RegistrantCheckedIn', (e) => {
+                        console.log("new check-in detected");
                         this.getRegistrations();
                     });
+                
+                console.log("Laravel Echo is listening for registration check ins now.");
             }
         },
 
