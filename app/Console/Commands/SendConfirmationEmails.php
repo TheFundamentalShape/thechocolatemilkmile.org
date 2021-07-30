@@ -60,10 +60,20 @@ class SendConfirmationEmails extends Command
         }
 
         // for each registration, find the email address associated with it, and send a confirmation mailable.
+        $this->info("Sending emails now...");
+        $bar = $this->output->createProgressBar($this->event->registrations->count());
         foreach($this->event->registrations as $registration){
-            Mail::to($registration->user->email)
-                ->send(new RegistrationDetails($registration));
+            try {
+                Mail::to($registration->email)
+                    ->send(new RegistrationDetails($registration));
+            } catch (\Exception $exception) {
+                $this->newLine();
+                $this->warn("Could not send a confirmation to " . $registration->email);
+            }
+
+            $bar->advance();
         }
+        $bar->finish();
 
         return 0;
     }

@@ -21,6 +21,7 @@ use App\Events\RegistrantCheckedIn;
 use App\Mail\RegistrationConfirmed;
 
 use App\Exceptions\AlreadyCheckedInException;
+use App\Mail\RegistrationDetails;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::get('/user/api/registrations', function(){
 });
 
 Route::get('/getreg/{registration}', function(Registration $registration){
-    return (new RegistrationConfirmed($registration))->render();
+    return (new RegistrationDetails($registration))->render();
 });
 
 Auth::routes();
