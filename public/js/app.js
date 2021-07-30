@@ -7617,6 +7617,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "RegistrantsList",
   methods: {
@@ -50641,6 +50647,22 @@ var render = function() {
                             { staticClass: "px-6 py-4 whitespace-nowrap" },
                             [
                               _c(
+                                "div",
+                                { staticClass: "text-sm text-gray-900" },
+                                [
+                                  _vm._v(
+                                    _vm._s(registration.registrant.mile_time)
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            { staticClass: "px-6 py-4 whitespace-nowrap" },
+                            [
+                              _c(
                                 "span",
                                 {
                                   directives: [
@@ -50774,6 +50796,16 @@ var staticRenderFns = [
               "\n                    Confirmation Number\n                "
             )
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "th",
+          {
+            staticClass:
+              "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+            attrs: { scope: "col" }
+          },
+          [_vm._v("\n                    Mile Time\n                ")]
         ),
         _vm._v(" "),
         _c(
