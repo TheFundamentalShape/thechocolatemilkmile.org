@@ -145,7 +145,7 @@
             addShirtToOrder() {
                 if(this.order.hasShirt == false) {
                     this.order.hasShirt = true;
-                    this.totalCost += 1300;
+                    this.totalCost += 1800;
                 }
             },
 
@@ -153,7 +153,7 @@
                 if(this.order.hasShirt == true){
                     this.order.hasShirt = false;
                     this.order.shirtSize = null;
-                    this.totalCost -= 1300;
+                    this.totalCost -= 1800;
                 }
             },
 

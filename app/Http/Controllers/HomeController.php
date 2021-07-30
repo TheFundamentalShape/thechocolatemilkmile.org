@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'events' => Event::all()
+            'events' => Event::where('published', 1)->get()
         ]);
     }
 }

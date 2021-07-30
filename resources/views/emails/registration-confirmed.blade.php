@@ -1,5 +1,5 @@
 @component('mail::message')
-# Hi there, {{ \Illuminate\Support\Facades\Auth::user()->name }}.
+# Hi there, {{ $registration->user->name }}.
 
 We're so glad you registered for <b>{{ $registration->event->title }}</b>.
 
