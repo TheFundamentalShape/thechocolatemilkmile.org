@@ -9,9 +9,9 @@ is correct. If anything looks wrong please let us know <a href="{{ route('landin
 and we'll update your registration.
 
 @component('mail::table')
-| Name       | Email         | Mile Time  |
-| :-------------: |:-------------:| :--------:|
-| {{ $registration->name }}      | {{ $registration->email }}      | {{ $registration->mile_time }}      |
+| Name       | Email         | Mile Time  | Confirmation #  |
+| :-------------: |:-------------:| :--------:| :--------:|
+| {{ $registration->name }}      | {{ $registration->email }}      | {{ $registration->mile_time }}      | {{ $registration->confirmation_number }}     |
 @endcomponent
 
 We also wanted to reiterate and finalize some of the event details with you.
@@ -21,7 +21,7 @@ We also wanted to reiterate and finalize some of the event details with you.
     
     - You'll want to park in the lot near Freedom Circle, as check-in is going to be stationed near the gate heading towards the track.
 
-2. Check in is tomorrow, <b>July 31st at 2:00 PM</b>. The race will begin shortly after that.
+2. Check in is tomorrow, <b>July 31st at 2:00 PM</b>. The race will begin shortly after that. We reccomend that you get here a couple minutes early so we can check everyone in, in a timely manner. 
 
 3. You will need your <b>confirmation number to check in</b>!
 
